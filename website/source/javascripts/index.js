@@ -113,8 +113,9 @@
   }
 
   function displayResult(index) {
+    resultDisplay.src = '';
+
     if (typeof results === 'undefined' || results == null || results.length == 0) {
-      resultDisplay.src = '';
       if (searchField.value.length > 0) {
         resultMessage.innerHTML = 'No results. Search for something else.';
       } else {
@@ -127,8 +128,7 @@
 
     navigation.style.display = 'block';
 
-    resultDisplay.type = 'video/mp4';
-    resultDisplay.src = results[index].mp4;
+    resultDisplay.src = results[index].webp;
     resultDisplay.width = results[index].width;
     resultDisplay.height = results[index].height;
 
